@@ -23,8 +23,22 @@ const conegeometry = new THREE.ConeGeometry( 3, 10, 16 );
 const conematerial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
 const cone = new THREE.Mesh(conegeometry, conematerial ); scene.add( cone );
 
+//Capsule geometry
+const capsulegeometry = new THREE.CapsuleGeometry( 2, 3, 4, 8 ); 
+const capsulematerial = new THREE.MeshBasicMaterial( {color: 0x00ff00} ); 
+const capsule = new THREE.Mesh( capsulegeometry, capsulematerial ); scene.add( capsule );
+
+//Sphere geometry
+const spheregeometry = new THREE.SphereGeometry( 2, 8, 4 ); 
+const spherematerial = new THREE.MeshBasicMaterial( { color: "blue" } ); 
+const sphere = new THREE.Mesh( spheregeometry, spherematerial ); scene.add( sphere );
+
 //Object position
 cone.position.x = -8
+
+capsule.position.x = 8
+
+sphere.position.y = 8
 
 // Object animation
 function animate() {
@@ -38,6 +52,13 @@ function animate() {
 	torus.rotation.y += 0.01;
 
 	cone.rotation.x += 0.05;
+
+	capsule.rotation.x += 0.05;
+	capsule.rotation.z += 0.05;
+
+	sphere.rotation.x += 0.05;
+	sphere.rotation.y += 0.05;
+	sphere.rotation.z += 0.05;
 
 	//cube.position.x += 1;
 	//end animation
