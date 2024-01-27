@@ -18,19 +18,26 @@ const torusgeometry = new THREE.TorusGeometry( 3, 1, 8, 50 );
 const torusmaterial = new THREE.MeshBasicMaterial( { color: "orange" } ); 
 const torus = new THREE.Mesh( torusgeometry, torusmaterial ); scene.add( torus );
 
-//Object Move
-//cube.position.x = -0.5;
+//Cone geometry
+const conegeometry = new THREE.ConeGeometry( 3, 10, 16 ); 
+const conematerial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+const cone = new THREE.Mesh(conegeometry, conematerial ); scene.add( cone );
+
+//Object position
+cone.position.x = -8
 
 // Object animation
 function animate() {
 	requestAnimationFrame( animate );
 	
 	//start animation
-	cube.rotation.x += 5;
-	cube.rotation.y += 5;
-	cube.rotation.z += 5;
+	cube.rotation.x += 0.2;
+	cube.rotation.y += 0.2;
+	cube.rotation.z += 0.2;
 
 	torus.rotation.y += 0.01;
+
+	cone.rotation.x += 0.05;
 
 	//cube.position.x += 1;
 	//end animation
