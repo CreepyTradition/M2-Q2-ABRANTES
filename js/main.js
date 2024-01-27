@@ -59,8 +59,6 @@ function animate() {
 	sphere.rotation.x += 0.05;
 	sphere.rotation.y += 0.05;
 	sphere.rotation.z += 0.05;
-
-	//cube.position.x += 1;
 	//end animation
 
 	renderer.render( scene, camera );
